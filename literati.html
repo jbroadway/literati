@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ window_title|none }} - {{ conf('General', 'site_name') }}</title>
+	<meta http-equiv="content-type" content="text/html; charset={{ i18n.charset }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/layouts/literati/css/screen.css" />
+	<!--[if lt IE 8]-->
+		<link rel="stylesheet" type="text/css" href="/layouts/literati/css/ie.css" />
+	<!--[endif]-->
+	<link rel="stylesheet" type="text/css" href="/layouts/literati/css/style.css" />
+	{! admin/head !}
+	{{ head|none }}
+</head>
+<body>
+<div class="container">
+
+	<!-- head -->
+	<div class="span-2">&nbsp;</div>
+	<div id="head" class="span-20">
+		<h1>{{ conf('General', 'site_name') }}</h1>
+		<div class="slogan">Tag line goes here.</div>
+	</div>
+	<div class="span-2 last">&nbsp;</div>
+
+	<!-- body and sidebar -->
+	<div id="body" class="span-13 prepend-2 append-1">
+{% if title != '' %}<h1>{{ title|none }}</h1>{% end %}
+{{ body|none }}
+	</div>
+	<div id="sidebar" class="span-6 last append-2">
+{! blocks/members !}
+	</div>
+
+	<!-- footer -->
+	<div class="span-2 clear">&nbsp;</div>
+	<div id="footer" class="span-20">
+		{"Powered by"} <a href="http://www.elefantcms.com/">Elefant CMS</a>
+	</div>
+	<div class="span-2">&nbsp;</div>
+
+</div>
+{{ tail|none }}
+</body>
+</html>
